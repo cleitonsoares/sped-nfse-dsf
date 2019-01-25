@@ -131,9 +131,8 @@ class Tools extends BaseTools
         $content .= "</Lote>"
             . "</ns1:ReqConsultaNFSeRPS>";
      
-        if ($this->wsobj->sign->$operation) {
-            $content = $this->sign($content, 'Lote', 'Id');
-        }
+        
+        $content = $this->sign($content, 'Lote', 'Id');
         Validator::isValid($content, $this->xsdpath."/ReqConsultaNFSeRPS.xsd");
         return $this->send($content, $operation);
     }
