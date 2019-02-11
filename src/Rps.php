@@ -66,7 +66,7 @@ class Rps implements RpsInterface
     private function init(stdClass $rps)
     {
         $this->std = $this->propertiesToLower($rps);
-        $this->jsonschema = \Safe\realpath("../storage/jsonSchemes/rps.schema");
+        $this->jsonschema = \Safe\realpath(__DIR__ . '/../storage/jsonSchemes/rps.schema');
         $this->validInputData($this->std);
     }
     
